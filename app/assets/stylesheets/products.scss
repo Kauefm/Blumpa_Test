@@ -1,3 +1,61 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar-photo {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 50px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.navbar {
+  height: 70px;
+  position: fixed;
+  margin-top: 0px;
+  width: 100%;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #82c0e8;
+  color: white;
+  display: flex;
+}
+
+.footer {
+  min-height: 30px;
+  display: flex;
+  align-text: center;
+  padding: 10px 0px;
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(51,51,51,0.08);
+  color: black;
+}
+
+.container {
+  margin-top:30px;
+  width: 600px;
+  height: 70vh;
+}
+
+
+.card {
+  background-size: cover !important;
+  background-position: center;
+  color: black;
+  position: relative;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+  background-color: rgba(51,51,51,0.08);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .card:hover{
+  opacity: 0.3;
+  }

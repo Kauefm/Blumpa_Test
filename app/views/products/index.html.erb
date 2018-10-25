@@ -1,0 +1,15 @@
+<div class="container">
+  <h2> Abaixo lista dos produtos criados: </h2>
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-6 col-sm-4">
+      <div class="card">
+          <h3> ID: <%= product.id %> </h3>
+          <p> Descrição do produto: <%= product.description %> </p>
+          <p> Quantidade: <%= product.quantity %> </p>
+          <p> Preço: R$ <%= product.price %> </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
