@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Desenvolver um sistema (REST API) básico de compra que:
 
-Things you may want to cover:
+- Tenha um CRUD de produtos (descrição, preço unitário e quantidade)
 
-* Ruby version
+- Tenha uma POC pagamento de fatura utilizando a API de clearing (Stripe API – usar o stripe checkout)
 
-* System dependencies
+- Considere que a existe apenas 1 cliente "fixo" no sistema. Ele possui um nome e email
 
-* Configuration
+- Enviar emails de sucesso ou erros para o cliente
 
-* Database creation
+- Testes unitários (quanto mais, melhor). Pelo menos um mock envolvendo a Stripe API
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- O código fonete deve ser enviado para um repositório Git
