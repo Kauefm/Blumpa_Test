@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  helper_method :number_to_currency_br
 
   def new
     @product = Product.new
@@ -17,18 +18,21 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_path
+    redirect_to root_path
   end
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to products_path(@product)
+    if @product.save
+       redirect_to products_path
+    else
+      render 'new'
+    end
   end
 
   def update
     @product.update(product_params)
-    redirect_to produt_path(@product)
+    redirect_to products_path
   end
 
   private
