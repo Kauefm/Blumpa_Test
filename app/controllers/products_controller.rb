@@ -3,11 +3,12 @@ class ProductsController < ApplicationController
   helper_method :number_to_currency_br
 
   def new
-    @product = Product.new
+      @product = Product.new
   end
 
   def index
     @products = Product.all
+    @clients = Client.all
   end
 
   def show
@@ -23,6 +24,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+      if Client.nil?
+        client = Client.new(name:"Kauê" , email:"kauefm@gmail.com")
+      else
+        client = Client.last
+      end
+    @product.client = client
     if @product.save
        redirect_to products_path
     else
@@ -44,4 +51,4 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-  end
+end

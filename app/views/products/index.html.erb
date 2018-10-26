@@ -1,14 +1,16 @@
 <div class="container">
-  <p> Há <%= @products.count %> produtos criados </p>
+  <p> Há <%= @products.count %> produtos criados de <%= @clients.count %>cliente. </p>
   <p> <%= link_to 'Criar um novo produto', new_product_path, method: :get %> </p>
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-6 col-sm-4">
         <div class="card">
-            <h3> ID: <%= product.id %> </h3>
-            <p> Descrição do produto: <%= product.description %> </p>
+            <h3> Cliente: <%= product.client.name %> </h3>
+            <h4> Email: <%= product.client.email %> </h3>
+            <p> Produto: <%= product.description %> </p>
+            <p> ID: <%= product.id %> </p>
             <p> Quantidade: <%= product.quantity %> </p>
-            <p> Preço: <%= product.price %> </p>
+            <p> Preço: R$ <%= (number_with_delimiter(product.price, delimiter: ".", separator: ",")) %> </p>
             <%= link_to "Apagar", product_path(product),
               method: :delete,
               data: { confirm: "Tem certeza que quer apagar este produto?" } %>

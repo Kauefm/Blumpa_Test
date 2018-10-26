@@ -10,6 +10,7 @@ end
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'rails', '~> 5.1.6'
+gem 'pundit'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
