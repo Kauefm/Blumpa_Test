@@ -7,6 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem "figaro"
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'rails', '~> 5.1.6'
