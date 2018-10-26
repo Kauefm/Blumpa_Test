@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   helper_method :number_to_currency_br
 
+
   def new
       @product = Product.new
   end
@@ -31,6 +32,7 @@ class ProductsController < ApplicationController
       end
     @product.client = client
     if @product.save
+        ProductMailer.product_created(@product).deliver_now
        redirect_to products_path
     else
       render 'new'

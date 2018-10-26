@@ -1,5 +1,5 @@
 <div class="container">
-  <p> Há <%= @products.count %> produtos criados de <%= @clients.count %>cliente. </p>
+  <p> Há <%= @products.count %> produtos criados de <%= @clients.count %> cliente. </p>
   <p> <%= link_to 'Criar um novo produto', new_product_path, method: :get %> </p>
   <div class="row">
     <% @products.each do |product| %>
