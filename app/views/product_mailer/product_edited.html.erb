@@ -1,0 +1,8 @@
+<h3> Ola <%= @product.client.name %> </h3>
+<p> O produto <%= @product.id %> foi editado com sucesso !!! </p>
+<p> Abaixo veja as novas informações editadas:  </p>
+<p> Descrição: <%= @product.description %> </p>
+<p> Quantidade: <%= @product.quantity %> </p>
+<p> Preço: R$ <%= (number_with_delimiter(@product.price, delimiter: ".", separator: ",") %> </p>
+<p> Caso você as informações estejam incorretas, basta editar novamente!!! </p>
+<p> Obrigado por utilizar os serviços da Blumpa. </p>

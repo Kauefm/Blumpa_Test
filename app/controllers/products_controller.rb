@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
+    ProductMailer.erased(@product).deliver_now
     redirect_to root_path
   end
 
@@ -32,7 +33,7 @@ class ProductsController < ApplicationController
       end
     @product.client = client
     if @product.save
-        ProductMailer.product_created(@product).deliver_now
+        ProductMailer.created(@product).deliver_now
        redirect_to products_path
     else
       render 'new'
@@ -41,6 +42,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
+    ProductMailer.edited(@product).deliver_now
     redirect_to products_path
   end
 
